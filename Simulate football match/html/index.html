@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="utf-8" />
+     <script src="../javascript/data.js" type="text/javascript"></script> <!-- Contains football continents, country and teams -->
+     <script src="../javascript/userdetail.js" type="text/javascript"></script> <!-- contains form elements, validation and sets local storage with user entered- form data -->
+      <script type="text/javascript" src="../javascript/cookies.js"></script>
+     <title>Play match!</title>
+     <link rel="stylesheet" type="text/css" href="../css/style.css"> 
+     
+      <script>
+          var IE7 = false;
+      </script>
+      <!--[if lt IE 9]>
+        <script>
+            var IE7=true;
+        </script>
+<![endif]-->
+  </head>
+  <script>
+    matchPlay=0; // To check if match is played once
+    userTeam = new Object();
+    oppTeam = new Object();
+    function imageError(which)  // incase image is not found or user clicks on 'question' option of select dropdown menus
+    {
+        which.src="../media/images/fifa.jpg"; //set default image
+    }
+    
+   function build(which,divID) 
+    {
+     var leftPos = 200, topPos = 20; //Position variables for Inner div which holds select
+     if(which=='init')  //To check if it is first time 
+     {
+         var cList = data[which]; // holds data of 'init' from data.js
+         
+         //creating div,selects and its' options 
+         var newOption;
+         var cSelect = document.createElement("select");
+         var divEle = document.createElement("div");
+         
+         //setting div attributes
+         divEle.setAttribute('id',"select "+which+divID);
+         divEle.setAttribute('style',"position:relative; top:"+topPos+"px; left:"+leftPos+"px");
+         
+         //incrementing 
+         leftPos = leftPos + 10;
+         tPostion = topPos + 20;
+         
+         cSelect.setAttribute('id',which+" "+divID);
+        
+         for (var i=0; i<cList.length; i++) 
+         {
+            newOption = document.createElement("option"); 
+            newOption.value = cList[i];  
+            newOption.text=cList[i];
+            cSelect.add(newOption); //for IE7 and IE8
+            cSelect.appendChild(newOption);
+         }
+         
+         //append select to newly created div and  newly created div to body div (<main div><child div><select>)
+         divEle.appendChild(cSelect);
+         document.getElementById(divID).appendChild(divEle);
+         
+         //slide each select down
+         moveIt(divEle.getAttribute("id"),10);
+         
+         var element = document.getElementById(which+" "+divID); //select the element and set its onchange event
+         element.onchange = function () 
+         { 
+                // get the parent div id ; required to append  divs to appropriate parent divs
+                 var divID=element.parentNode.parentNode.getAttribute("id"); 
+                
+                // on select of each team the logo is displayed
+                document.getElementById(divID+" logo").getElementsByTagName("img")[0].src="../media/images/"+this.value+".jpg";
+                build(this,divID);
+         }
+       }
+
+        else
+        {
+           //if not first time        
+           while(which.parentNode!=which.parentNode.parentNode.lastChild)
+            {
+                //kill all the next siblings
+                 which.parentNode.parentNode.removeChild(which.parentNode.parentNode.lastChild);
+            }
+           
+            var cList = data[which.value];
+            
+            if(cList==undefined)
+            {
+                // if it is the last element of secend main div , match can be played hence create kick off! button
+                
+                if(divID=="dropDown2" && (document.getElementById("playButton"))==null)
+                {
+                        var butEle = document.createElement("button");
+                        butEle.setAttribute('name','play match');
+                        butEle.setAttribute('id','playButton');
+                        butEle.setAttribute('style',"position:absolute;");
+                        butEle.setAttribute('class','button');
+                        butEle.appendChild(document.createTextNode('Kick Off!'));
+                        butEle.onclick = function()
+                        { 
+                            playGame();
+                        }
+                        document.getElementById("playButtonDiv").appendChild(butEle);
+                }
+                
+                //if it is the last element of first main div then ceate select for second div (that is opposition team selection)
+                
+                if(divID=='dropDown' && (document.getElementById('dropDown2').firstChild)==null)
+                    {
+                        var imgEle = document.createElement("img");
+                        imgEle.setAttribute("src","../media/images/fifa.jpg");
+                        imgEle.setAttribute("height","200px");
+                        imgEle.setAttribute("width","300px");
+                        imgEle.setAttribute("id","logo2");
+                        imgEle.setAttribute("onerror","imageError(this)");
+                        document.getElementById("dropDown2 logo").appendChild(imgEle);
+                        build('init','dropDown2');
+                        return; 
+                    }
+                return;
+            }
+           else if(cList[0]=="0") // data value of question is zero
+            {
+                // do nothing if question is selected
+                return;
+            }
+                        
+            var newOption;
+            var cSelect = document.createElement("select");
+            var divEle = document.createElement("div");
+            
+            divEle.setAttribute('id',"select "+which.value+divID);
+            divEle.setAttribute('style',"position:relative; top:"+topPos+"px; left:"+leftPos+"px; border: 3px solid white;  margin-top: 30px;");
+            
+            leftPos = leftPos + 10;
+            tPostion = topPos + 20;
+            
+            cSelect.setAttribute('id',which.value+" "+divID);
+            cSelect.setAttribute('style',"border: 2px solid blue");
+     
+            
+            for (var i=0; i<cList.length; i++) {
+            newOption = document.createElement("option");
+            newOption.value = cList[i];
+            newOption.text=cList[i];
+            cSelect.add(newOption);
+            cSelect.appendChild(newOption);
+            }
+            
+            divEle.appendChild(cSelect);
+            document.getElementById(divID).appendChild(divEle);
+            moveIt(divEle.getAttribute("id"),10);
+            
+            var element = document.getElementById(which.value+" "+divID);
+            element.onchange = function () 
+            {
+                var divID=element.parentNode.parentNode.getAttribute("id");
+                document.getElementById(divID+" logo").getElementsByTagName("img")[0].src="../media/images/"+this.value+".jpg";
+                build(this,divID);};
+            }
+   }
+    
+    function moveIt(id,howMuch)
+      {
+            var thingToMove=document.getElementById(id);
+            if(parseInt(thingToMove.style.top)<100)
+            {
+				thingToMove.style.top=parseInt(thingToMove.style.top)+howMuch+'px';
+				setTimeout(function(){moveIt(id,howMuch);},30);
+			}
+      }
+      
+    function validate(id)
+    {
+       var i = document.getElementById(id).getElementsByTagName("select").length-1;
+       var team = document.getElementById(id).getElementsByTagName("select")[i].value;
+       if(data[team]==undefined)
+          {
+              if(id=="dropDown")
+              {
+                  userTeam.name = team;  //set first team name
+              }
+              else
+              {
+                  oppTeam.name = team;  //set second team name
+              }
+          return true;
+          }
+        else 
+            return false;
+    }
+    
+    function playGame()
+    {
+        if (matchPlay) //no action on click of Kickoff! button if match is played
+            return;
+        
+        if((validate("dropDown")==true) && (validate("dropDown2")==true))
+        {
+            
+            document.getElementById("userTeam").appendChild(document.createTextNode(userTeam.name));
+            document.getElementById("oppTeam").appendChild(document.createTextNode(oppTeam.name));
+            
+            userTeam.score = Math.floor(Math.random()*6)+0; //randomly generate a score between 0 - 6
+            oppTeam.score = Math.floor(Math.random()*6)+0;
+            
+            
+            var progressDiv = document.createElement("div");
+            progressDiv.setAttribute("id","myProgress"); // create a base div
+    
+            var barDiv = document.createElement("div"); // create an upper div
+            barDiv.setAttribute("id","myBar");
+            
+            progressDiv.appendChild(barDiv);
+            document.getElementsByTagName("body")[0].appendChild(progressDiv);      
+            var width = 1;
+            var id = setInterval(frame, 50); //call until width >=100
+      
+            function frame() 
+            {
+                if (width >= 100)
+                {
+                    clearInterval(id);
+                    
+                    document.getElementById("userScore").value = parseInt(userTeam.score); // update score obtained from random value
+                    document.getElementById("oppScore").value = parseInt(oppTeam.score);
+                    
+                    if(parseInt(userTeam.score)>parseInt(oppTeam.score))
+                        window.alert(userTeam.name+" won the match");
+                    
+                    else if(parseInt(userTeam.score)<parseInt(oppTeam.score))
+                           window.alert(oppTeam.name+" won the match");
+                    else
+                        window.alert("match is tied");
+                    buildForm();
+                } 
+                else 
+                {
+                    width++;
+                    document.getElementById("myBar").style.width = width + '%';
+                }     
+            }
+            matchPlay=1; //once match is played set = 1
+        }
+       else
+            alert("please select a team"); //if user has not selected a team (selected a continent, country or a league)
+    } 
+    </script>
+    
+   <body onload="build('init','dropDown');">
+    <h1>Stimulate a football match</h1>
+    <div style="position:absolute;top:90px; left:350px;"><h2>Select your team</h2></div>
+    <div id="dropDown" style="position:absolute; top:100px; left:50px"></div>
+    <div style="position:absolute;top:90px; right:350px;"><h2>Select opposition team</h2></div>
+    <div id="dropDown2" style="position:absolute; top:100px; right:500px"></div>
+    <div id="dropDown logo" style="position:absolute; top:600px; left:300px;">
+        <img src="../media/images/fifa.jpg" onError="imageError(this);" style="position:absolute;" id="logo1;" height="200px;" width="300px;">
+    </div>
+    <div id="playButtonDiv" style="position:absolute; top:600px; left:850px;"></div>
+    <div id="dropDown2 logo" style="position:absolute; top:600px; left:1300px;"></div>
+    <div id="submitForm" style="position:absolute; top:700px; left:740px"></div>
+    <div id="Score" style="position:absolute; top:150px; left:850px;" height="100px;" width="500px;"><h4>Scores</h4>
+      <div style="position:relative;"><h4 id="userTeam"></h4><input id="userScore" type="number" class="score" name="myScore" value="0" readonly>
+      <h4 id="oppTeam"></h4><input type="number"  id="oppScore" class="score" name="myScore" value="0" readonly></div>
+    </div>
+    </body>
+</html>
