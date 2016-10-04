@@ -109,7 +109,6 @@
                     {   
                          x+="<h4>"+item+"</h4>";  
                     });
-                console.log(x);
                  $('#careers').html(x);  
             });
         
