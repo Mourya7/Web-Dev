@@ -1,0 +1,245 @@
+/**
+ * Basic layout, for animation examples, check demo.css
+ */
+html, body
+{
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+/*	background: */
+	color: #d7e7f3;
+	
+	font-family: 'Work Sans', sans-serif;
+	font-size: 22px;
+	line-height: 33px;
+	
+	text-align: center;
+}
+
+a
+{
+	color: #d7e7f3;
+	text-decoration: none;
+	font-weight: 500;
+	
+	transition: color 0.25s ease;
+}
+
+a:hover
+{
+	color: #fff;
+}
+
+h1
+{
+	font-size: 3em;
+	font-weight: 200;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	line-height: normal;
+
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+h2
+{
+	font-weight: 300;
+	font-size: 1.3em;
+	line-height: 1.5em;
+	color: #75A1D0;
+	
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+h3
+{
+	font-weight: 500;
+	font-size: 1em;
+	line-height: 1.5em;
+	color: #d7e7f3;
+	margin: 80px 0 0 0;
+	
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+div.block
+{
+	position: relative;
+	height: 170vh;
+	padding: 15vh 10vw 18vh 10vw;
+}
+
+div.block svg 
+{
+	position: absolute;
+	bottom: 50px;
+	width: 30px;
+	
+	animation: chevronAnimation 4s ease-in-out 0s infinite;
+}
+
+div.block svg path
+{
+	fill: #7e9aae;
+}
+
+div.block:nth-child(1n)
+{
+	background: #061c2d;
+}
+
+div.block:nth-child(2n)
+{
+	background: hsl(205, 84%, 14%);
+}
+
+div.block:nth-child(3n)
+{
+	background: hsl(205, 90%, 22%);
+}
+
+
+/**
+ * Simple keyframes animation for the chevron on the first slide
+ */
+@keyframes chevronAnimation {
+	0% {
+		transform: translate(0,0) scale(1.0,1.0);
+	}
+	50% {
+		transform: translate(0,5px) scale(0.8,0.8);
+	}
+	100% {
+		transform: translate(0,0) scale(1.0,1.0);
+	}
+}
+
+/**
+ * Responsiveness
+ */
+@media screen and (max-width: 1024px)
+{	
+	body
+	{
+		font-size: 18px;
+		line-height: 27px;
+	}
+}
+
+@media screen and (max-width: 800px)
+{	
+	h1 span
+	{
+		display: block;
+	}
+	
+	div.block
+	{
+		height: 85vh;
+		padding: 15vh 15vw 0 15vw; 
+	}
+}
+
+@media screen and (max-width: 420px)
+{	
+	body
+	{
+		font-size: 12px;
+		line-height: 18px;
+	}
+}
+
+@media screen and (max-width: 360px)
+{	
+	h1
+	{
+		font-size: 3em;
+	}
+}
+
+.overlay{
+  position: absolute;
+  top: 70vh;
+  left: 28vh;
+  width: 75%;
+  height: 65%;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.5); /*dim the background*/
+  font-size: 20px;
+}
+
+.scrollit {
+    overflow:scroll;
+    height:100vh;
+}
+
+@media all {
+			.lightbox { display: none; }
+}    
+
+.lightbox > p
+{
+    color: mediumblue;
+}
+
+.lightbox > h4
+{
+    color: mediumblue;
+}
+.lightbox > h2
+{
+    color: mediumblue;
+}
+.lightbox > h3
+{
+    color: mediumblue;
+}
+.lightbox > h1
+{
+    color: mediumblue;
+}
+
+tr{
+    color:mediumblue;
+}
+
+table
+{
+	width: 1000px;
+	border-collapse: collapse;
+}
+
+thead
+{
+    width:1000px;
+    display:block;
+	overflow: auto;
+	background: white;
+    
+}
+
+tbody
+{
+    width: 1000px;
+	height: 1000px;
+	display: block;
+	overflow: auto;
+}
+
+td
+{
+	text-align: left;
+	vertical-align: top;
+	border-left: 1px solid #fff;
+    max-width: 270px;
+}
+th
+{
+    padding: 0em 2.5em 0em 2.5em;
+    text-align: center;
+	vertical-align: top;
+	border-left: 1px solid #fff;
+}
