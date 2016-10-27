@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project3_Mourya", "Project3_Mourya\Project3_Mourya.csproj", "{04DDD738-382D-41ED-8AB6-875F888E19C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTUtil", "..\..\..\..\Downloads\Project3_Nidhi\Project3_Nidhi\RESTUtil\RESTUtil.csproj", "{A4BB4995-4542-46B6-9790-797AB01F88E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04DDD738-382D-41ED-8AB6-875F888E19C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04DDD738-382D-41ED-8AB6-875F888E19C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04DDD738-382D-41ED-8AB6-875F888E19C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04DDD738-382D-41ED-8AB6-875F888E19C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4BB4995-4542-46B6-9790-797AB01F88E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4BB4995-4542-46B6-9790-797AB01F88E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4BB4995-4542-46B6-9790-797AB01F88E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4BB4995-4542-46B6-9790-797AB01F88E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

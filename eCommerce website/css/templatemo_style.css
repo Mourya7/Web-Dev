@@ -1,0 +1,47 @@
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #999;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	line-height: 1.4em; 
+	background-color: #2e2e2e;
+	background-repeat: repeat;
+	background-image: url(../images/templatemo_body.jpg)
+}
+
+a, a:link, a:visited { 
+	color: #08aee3; 
+	font-weight: normal; 
+	text-decoration: none; 
+}
+
+a:hover { 
+	text-decoration: underline; 
+}
+
+a.more { 
+	display: inline-block; 
+	width: 80px; 
+	height: 28px; 
+	line-height: 28px; 
+	text-align: center; 
+	font-size: 10px; 
+	font-weight: bold; 
+	color: #21bdd0; 
+	background: url(../images/more_but.jpg); 
+}
+a.more:hover { 
+	background: #333; 
+	text-decoration: none; 
+}
+
+
+.pagination button{
+    position: center;
+}
+
+.no_margin_right { 
+	margin-right: 0; 
+}

@@ -1,0 +1,14 @@
+C:\Users\dsbics\Desktop\VisualStudio Files (weeks 10-15)\2158\9a\Project3Test\RESTUtil\bin\Debug\RESTUtil.dll
+C:\Users\dsbics\Desktop\VisualStudio Files (weeks 10-15)\2158\9a\Project3Test\RESTUtil\bin\Debug\RESTUtil.pdb
+C:\Users\dsbics\Desktop\VisualStudio Files (weeks 10-15)\2158\9a\Project3Test\RESTUtil\obj\Debug\RESTUtil.dll
+C:\Users\dsbics\Desktop\VisualStudio Files (weeks 10-15)\2158\9a\Project3Test\RESTUtil\obj\Debug\RESTUtil.pdb
+C:\Users\dsbics\Desktop\VisualStudio Files (weeks 10-15)\2158\9b\Project3Start\RESTUtil\bin\Debug\RESTUtil.dll
+C:\Users\dsbics\Desktop\VisualStudio Files (weeks 10-15)\2158\9b\Project3Start\RESTUtil\bin\Debug\RESTUtil.pdb
+C:\Users\dsbics\Desktop\VisualStudio Files (weeks 10-15)\2158\9b\Project3Start\RESTUtil\obj\Debug\RESTUtil.csprojResolveAssemblyReference.cache
+C:\Users\dsbics\Desktop\VisualStudio Files (weeks 10-15)\2158\9b\Project3Start\RESTUtil\obj\Debug\RESTUtil.dll
+C:\Users\dsbics\Desktop\VisualStudio Files (weeks 10-15)\2158\9b\Project3Start\RESTUtil\obj\Debug\RESTUtil.pdb
+\\vmware-host\Shared Folders\Desktop\Project3\Project3StartDone\RESTUtil\bin\Debug\RESTUtil.dll
+\\vmware-host\Shared Folders\Desktop\Project3\Project3StartDone\RESTUtil\bin\Debug\RESTUtil.pdb
+\\vmware-host\Shared Folders\Desktop\Project3\Project3StartDone\RESTUtil\obj\Debug\RESTUtil.csprojResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Desktop\Project3\Project3StartDone\RESTUtil\obj\Debug\RESTUtil.dll
+\\vmware-host\Shared Folders\Desktop\Project3\Project3StartDone\RESTUtil\obj\Debug\RESTUtil.pdb

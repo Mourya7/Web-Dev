@@ -1,0 +1,19 @@
+\\vmware-host\Shared Folders\Desktop\Project3\Project3_Mourya\Project3_Mourya\bin\Debug\Project3_Mourya.exe.config
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\bin\Debug\Project3_Mourya.exe.config
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\obj\Debug\Project3_Mourya.csprojResolveAssemblyReference.cache
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\obj\Debug\Project3_Mourya.Form1.resources
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\obj\Debug\Project3_Mourya.Minor_details.resources
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\obj\Debug\Project3_Mourya.People_details.resources
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\obj\Debug\Project3_Mourya.Properties.Resources.resources
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\obj\Debug\Project3_Mourya.Research_details.resources
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\obj\Debug\Project3_Mourya.Resources_deatails.resources
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\obj\Debug\Project3_Mourya.csproj.GenerateResource.Cache
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\bin\Debug\Project3_Mourya.exe
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\bin\Debug\Project3_Mourya.pdb
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\bin\Debug\Newtonsoft.Json.dll
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\bin\Debug\RESTUtil.dll
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\bin\Debug\RESTUtil.pdb
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\obj\Debug\Project3_Mourya.exe
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\obj\Debug\Project3_Mourya.pdb
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\imour\Desktop\Project3\Project3_Mourya\Project3_Mourya\Project3_Mourya\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
